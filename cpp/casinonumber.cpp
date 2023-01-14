@@ -21,7 +21,7 @@ int main()
     rules();
     cout << "\n\nİsminiz Nedir Efendim? ";
     getline(cin, oyuncu);
-    cout << "\n\n Oyun oynamak için başlangıç bakiyesini girin: ";
+    cout << "\n\n Oyun oynamak için başlangiç bakiyesini girin: ";
     cin >> bakiye;
 
     do {
@@ -31,7 +31,7 @@ int main()
 
         do {
 
-            cout << "Hey, " << oyuncu <<  " bahis miktarı giriniz: ";
+            cout << "Hey, " << oyuncu <<  " bahis miktari giriniz: ";
             cin >> bahismiktar;
         
             if(bahismiktar > bakiye)
@@ -41,17 +41,17 @@ int main()
 
         do{
 
-            cout << "1 ile 10 arasındaki bahis sayısını tahmin et: ";
+            cout << "1 ile 10 arasindaki bahis sayisini tahmin et: ";
             cin >> tahmin;
             if(tahmin <= 0 || tahmin > 10)
-            cout << "\nSayı 1 ile 10 arasında olmalıdır.\n" << "Tekrar sayıyı giriniz.\n";
+            cout << "\nSayi 1 ile 10 arasinda olmalidir.\n" << "Tekrar sayiyi giriniz.\n";
 
         }while(tahmin <= 0 || tahmin >10);
         
         zar = rand()%10 +1;
         if(zar == tahmin){
 
-            cout << "Şanslısın!! kazandın. " << "$" << bahismiktar * 10;
+            cout << "Şanslisin!! kazandin. " << "$" << bahismiktar * 10;
             bakiye = bakiye + bahismiktar * 10;
         }
         else{
@@ -64,7 +64,7 @@ int main()
 
         if(bakiye == 0)
         {
-            cout << "Senin bakiyen bitti tekrar oynayınız! ";
+            cout << "Senin bakiyen bitti tekrar oynayiniz! ";
             break;
         }
         cout << "\n\n->Tekrar oynamak istiyor musunuz (Y/n)? ";
@@ -73,7 +73,7 @@ int main()
     }while(tercih == 'Y' || tercih == 'y');
     
     cout << "\n\n";
-    cout << "\n\nTeşekkürler oynadığınz için. Bakiyeniz " << bakiye << " $" << "\n\n";
+    cout << "\n\nTeşekkürler oynadiğinz için. Bakiyeniz " << bakiye << " $" << "\n\n";
     while(tercih == 'n' || tercih == 'N');
  
     return 0;
@@ -81,6 +81,6 @@ int main()
 void rules(){
     system("clear");
     cout << "\t\t========================KUMARHANE SAYI TAHMİN KURALLARI!========================\n";
-    cout << "\t1. 1 ile 10 arasında sayı seçiniz\n";
-    cout << "\t2. Kazanan bahsin 10 katını alır(1 dolar 10 tl :))\n\n";
+    cout << "\t1. 1 ile 10 arasinda sayi seçiniz\n";
+    cout << "\t2. Kazanan bahsin 10 katini alir(1 dolar 10 tl :))\n\n";
 }

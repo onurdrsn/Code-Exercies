@@ -28,11 +28,11 @@ class hesap_sorgu{
 
 };
 void hesap_sorgu::read_data(){
-    cout << "\nHesap Numarası Giriniz: ";
+    cout << "\nHesap Numarasi Giriniz: ";
     cin >> hesapnumarasi;
-    cout << "İlk Adınız: ";
+    cout << "İlk Adiniz: ";
     cin >> ilkisim;
-    cout << "Soy Adınız: ";
+    cout << "Soy Adiniz: ";
     cin >> sonisim;
     cout << "Bakiyeyi Giriniz: ";
     cin >> toplam_bakiye;
@@ -42,9 +42,9 @@ void hesap_sorgu::read_data(){
 void hesap_sorgu::show_data(){
 
     cout << "-----------------------------------\n";
-    cout << "Hesap Numarası: " << hesapnumarasi << "\n";
-    cout << "İlk Adı: " << ilkisim << "\n";
-    cout << "Soy Adı: " << sonisim << "\n";
+    cout << "Hesap Numarasi: " << hesapnumarasi << "\n";
+    cout << "İlk Adi: " << ilkisim << "\n";
+    cout << "Soy Adi: " << sonisim << "\n";
     cout << "Mevcut Bakiye: " << toplam_bakiye << "\n";
     cout << "-----------------------------------\n";
 
@@ -62,7 +62,7 @@ void hesap_sorgu::read_rec(){
     infile.open("record.bank", ios::binary);
     if(!infile)
     {
-        cout << "Açılamıyor. Dosya bulunamadı!!";
+        cout << "Açilamiyor. Dosya bulunamadi!!";
         return;
     }
     cout << "\n\t\t\t\t\t\t--------------------------------Dosyadaki Veri--------------------------------\n";
@@ -79,13 +79,13 @@ void hesap_sorgu::search_rec(){
     ifstream infile;
     infile.open("record.bank", ios::binary);
     if(!infile){
-        cout << "Açılamıyor! Dosya bulunamadı!!";
+        cout << "Açilamiyor! Dosya bulunamadi!!";
         return;
     }
     infile.seekg(0, ios::end);
     int count = infile.tellg()/sizeof(*this);
-    cout << "Dosyada " << count << " kayıt var.\n";
-    cout << "Aramak için kayıt numarası giriniz: ";
+    cout << "Dosyada " << count << " kayit var.\n";
+    cout << "Aramak için kayit numarasi giriniz: ";
     cin >> n;
     infile.seekg((n-1)*sizeof(*this));
     infile.read(reinterpret_cast<char*>(this), sizeof(*this));
@@ -96,17 +96,17 @@ void hesap_sorgu::edit_rec(){
     fstream infile;
     infile.open("record.bank", ios::in|ios::binary);
     if(!infile){
-        cout << "Açılamadı! Dosya bulunamadı";
+        cout << "Açilamadi! Dosya bulunamadi";
         return;
     }
     infile.seekg(0, ios::end);
     int count = infile.tellg()/sizeof(*this);
-    cout << "\nDosyada " << count << " kayıt var.";
-    cout << "\nDüzenlenecek kayıt numarası giriniz: ";
+    cout << "\nDosyada " << count << " kayit var.";
+    cout << "\nDüzenlenecek kayit numarasi giriniz: ";
     cin >> n;
     infile.seekg((n-1)*sizeof(*this));
     infile.read(reinterpret_cast<char*>(this), sizeof(*this));
-    cout << "\nKayıt" << n << "aşağıdaki verilere sahiptir.";
+    cout << "\nKayit" << n << "aşağidaki verilere sahiptir.";
     show_data();
     infile.close();
     infile.open("record.bank", ios::out|ios::in|ios::binary);
@@ -120,13 +120,13 @@ void hesap_sorgu::del_rec(){
     ifstream infile;
     infile.open("record.bank", ios::binary);
     if(!infile){
-        cout << "Açılamadı! Dosya bulunamadı";
+        cout << "Açilamadi! Dosya bulunamadi";
         return;
     }
     infile.seekg(0,ios::end);
     int count = infile.tellg()/sizeof(*this);
-    cout << "\nDosyada " << count << " kayıt var.";
-    cout << "\nSilinecek kayıt numarası giriniz: ";
+    cout << "\nDosyada " << count << " kayit var.";
+    cout << "\nSilinecek kayit numarasi giriniz: ";
     cin >> n;
     fstream tmpfile;
     tmpfile.open("onur.bank",ios::out|ios::binary);
@@ -147,13 +147,13 @@ int main(){
     int choice;
     cout << "-----------------------------------Onur Bank System-----------------------------------\n";
     while(true){
-        cout << "Aşağıdaki Seçeneklerden Birini Seçiniz ";
-        cout << "\n\t1-->Kayıt dosyası ekleme";
-        cout << "\n\t2-->Kayıt dosyası gösterme";
-        cout << "\n\t3-->Kayıt dosyası arama";
-        cout << "\n\t4-->Kayıt dosyası güncelleme";
-        cout << "\n\t5-->Kayıt dosyası silme";
-        cout << "\n\t6-->Çıkış";
+        cout << "Aşağidaki Seçeneklerden Birini Seçiniz ";
+        cout << "\n\t1-->Kayit dosyasi ekleme";
+        cout << "\n\t2-->Kayit dosyasi gösterme";
+        cout << "\n\t3-->Kayit dosyasi arama";
+        cout << "\n\t4-->Kayit dosyasi güncelleme";
+        cout << "\n\t5-->Kayit dosyasi silme";
+        cout << "\n\t6-->Çikiş";
         cout << "\nSeçiminizi Giriniz: ";
         cin >> choice;
         switch(choice){
